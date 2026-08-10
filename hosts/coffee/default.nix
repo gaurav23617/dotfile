@@ -29,6 +29,7 @@
   environment.systemPackages = with pkgs; [
     darwin.cctools
     llvmPackages.bintools
+    secretspec
     # nushell
   ];
   environment.shells = [

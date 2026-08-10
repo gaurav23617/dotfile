@@ -91,11 +91,7 @@
     nvf = {
       url = "github:notashelf/nvf";
     };
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-    };
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
-    hermes-agent.url = "github:NousResearch/hermes-agent";
   };
 
   outputs =

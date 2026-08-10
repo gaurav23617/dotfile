@@ -8,10 +8,13 @@
 {
 
   home.packages = with pkgs; [
+    multica
+    multica-cli
     # spotiflac
     # spotidownloader
     # nyaa
     # motrix-next
+    moviebox-tui
   ];
 
   imports = [
@@ -28,7 +31,7 @@
   };
 
   editors = {
-    zed.enable = true;
+    zed.enable = false;
     neovim.enable = true;
   };
 
@@ -61,8 +64,6 @@
   wm.aerospace.enable = true;
 
   terminal.ghostty.enable = true;
-
-  # hermes-agent.enable = true;
 
   home.username = "gaurav";
   home.homeDirectory = "/Users/gaurav";
