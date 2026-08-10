@@ -41,7 +41,6 @@ myLib.mkHomeModule {
         luarocks
         nixd
         selene
-        biome
         uv
         typescript-go
         gopls

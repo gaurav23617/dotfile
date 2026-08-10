@@ -7,7 +7,6 @@ pkgs: with pkgs; [
   inter
   lato
   (google-fonts.override { fonts = [ "Inter" ]; })
-  jetbrains-mono
   nerd-fonts.jetbrains-mono
   nerd-fonts.zed-mono
 ]

@@ -13,21 +13,16 @@ in
 myLib.mkHomeModule {
   globalConfig = config;
   name = "lang.node";
-  description = "Node.js, Bun, and PNPM development environment";
+  description = "Node.js, Bun, Deno and PNPM development environment";
   config = {
     home = {
       packages = with pkgs; [
         nodejs_24
         pnpm
         # bun
-        npm-check-updates
-        npkill
-        husky
-        deno
-        biome
-        oxfmt
-        oxlint
-        tsgolint
+        # oxfmt
+        # oxlint
+        # tsgolint
         typescript-go
       ];
 
