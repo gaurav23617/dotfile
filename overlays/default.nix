@@ -6,7 +6,6 @@
   # https://wiki.nixos.org/wiki/Overlays
   modifications = final: prev: {
     # motrix-next = (import ./motrix-next.nix final prev).motrix-next;
-    nh = inputs.nh.packages.${final.stdenv.hostPlatform.system}.default;
 
     stable = import inputs.nixpkgs-stable {
       system = final.stdenv.hostPlatform.system;

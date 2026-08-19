@@ -95,13 +95,13 @@ tabs = "alt" # e.g. "ctrl" makes ctrl+1..9 switch tabs directly
 
 [ui]
 # Sidebar width (auto-scaled based on workspace names, this sets the default)
-# sidebar_width = 26
+sidebar_width = 16
 
 # Minimum sidebar width when expanded (columns)
-# sidebar_min_width = 18
+sidebar_min_width = 8
 
 # Maximum sidebar width when expanded (columns)
-# sidebar_max_width = 36
+sidebar_max_width = 20
 
 # Start with the sidebar collapsed. Changes take effect on the next launch.
 # sidebar_start_collapsed = false

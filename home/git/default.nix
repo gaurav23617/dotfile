@@ -20,7 +20,7 @@
     home.packages = with pkgs; [
       delta
       git-cliff
-      gitoxide
+      # gitoxide
       git-open
     ];
 

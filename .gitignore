@@ -15,6 +15,12 @@ config/ghostty/config
 .claude/
 config/ghostty/config.backup
 
+# herdr logs
+/config/herdr/herdr-client.log
+/config/herdr/herdr-server.log
+/config/herdr/release-notes.json
+/config/herdr/session.json
+
 # MemPalace per-project files (issue #185)
 mempalace.yaml
 entities.json
