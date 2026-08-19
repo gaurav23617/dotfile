@@ -7,9 +7,9 @@
 }:
 myLib.mkHomeModule {
   globalConfig = config;
-  name = "shell.tools.eza";
+  name = "cli.eza";
   description = "eza replacement for ls";
-  enableDefault = config.shell.tools.enable or false;
+  enableDefault = config.cli.enable or false;
   config = {
     programs.eza = {
       enable = true;

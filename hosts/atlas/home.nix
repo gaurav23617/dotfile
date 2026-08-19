@@ -23,8 +23,6 @@
       enable = true;
       starship.enable = true;
       direnv.enable = true;
-      fastfetch.enable = true;
-      bat.enable = true;
       atuin.enable = true;
     };
   };
@@ -46,7 +44,9 @@
   terminal.ghostty.enable = true;
 
   cli = {
+    enable = true;
     tmux.enable = true;
+    yazi.enable = true;
   };
 
   media = {

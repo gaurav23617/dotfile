@@ -7,9 +7,9 @@
 }:
 myLib.mkHomeModule {
   globalConfig = config;
-  name = "shell.tools.btop";
+  name = "cli.btop";
   description = "Btop system monitor";
-  enableDefault = config.shell.tools.enable or false;
+  enableDefault = config.cli.enable or false;
   config = {
     programs.btop = {
       package = pkgs.btop-cuda;
@@ -17,7 +17,7 @@ myLib.mkHomeModule {
     };
     home.file.".config/btop" = {
       recursive = true;
-      source = ../../../config/btop;
+      source = ../../config/btop;
     };
   };
 }

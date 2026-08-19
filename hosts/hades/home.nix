@@ -10,7 +10,9 @@
   ];
 
   versionControl.git.enable = true;
+  cli.enable = true;
   cli.lazydocker.enable = true;
+  cli.yazi.enable = true;
   shell.tools.enable = true;
 
   home.username = "gaurav";

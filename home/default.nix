@@ -7,10 +7,8 @@
 
     ./lang
     ./editor
-    ./tmux.nix
     ./git
     ./shell
-    ./lazydocker.nix
     ./ghostty.nix
     ./impala.nix
     ./bluetui.nix
@@ -24,6 +22,7 @@
     ./spicetify.nix
     ./sops.nix
     ./dirs.nix
+    ./cli
   ];
 
   editors = {

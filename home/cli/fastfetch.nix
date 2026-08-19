@@ -7,8 +7,9 @@
 }:
 myLib.mkHomeModule {
   globalConfig = config;
-  name = "shell.tools.fastfetch";
+  name = "cli.fastfetch";
   description = "Fastfetch system information tool";
+  enableDefault = config.cli.enable or false;
   config = {
     programs.fastfetch = {
       enable = true;

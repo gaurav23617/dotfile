@@ -36,18 +36,19 @@
   };
 
   cli = {
+    enable = true;
     tmux.enable = true;
+    herdr.enable = true;
     lazydocker.enable = true;
+    yazi.enable = true;
   };
 
   shell = {
     zsh.enable = true;
     tools = {
       enable = true;
-      bat.enable = true;
       atuin.enable = true;
       direnv.enable = true;
-      fastfetch.enable = true;
     };
   };
 

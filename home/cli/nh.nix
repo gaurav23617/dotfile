@@ -7,9 +7,9 @@
 }:
 myLib.mkHomeModule {
   globalConfig = config;
-  name = "shell.tools.nh";
+  name = "cli.nh";
   description = "nh Nix helper tools";
-  enableDefault = config.shell.tools.enable or false;
+  enableDefault = config.cli.enable or false;
   config = {
     programs.nh = {
       enable = true;
