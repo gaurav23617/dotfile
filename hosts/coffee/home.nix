@@ -15,6 +15,7 @@
     # nyaa
     # motrix-next
     moviebox-tui
+    recordly
   ];
 
   imports = [
