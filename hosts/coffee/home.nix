@@ -16,6 +16,7 @@
     # motrix-next
     moviebox-tui
     recordly
+    tinycast
   ];
 
   imports = [
@@ -67,34 +68,33 @@
 
   terminal.ghostty.enable = true;
 
-  home.username = "gaurav";
-  home.homeDirectory = "/Users/gaurav";
-
-  xdg.userDirs.enable = false;
-
-  home.customDirs = [
-    ".config/sops/age"
-    "personal"
-    { "personal/media" = "Movies/media"; }
-    "personal/obsidian"
-    "personal/projects"
-    "personal/projects/learn"
-    "personal/playground"
-    "workspace"
-    "workspace/docs"
-  ];
-
-  home.stateVersion = "26.11";
-  home.sessionVariables = {
-    XDG_CONFIG_HOME = "$HOME/.config";
-    TERM = "ghostty";
-    SHELL = "zsh";
+  home = {
+    username = "gaurav";
+    homeDirectory = "/Users/gaurav";
+    customDirs = [
+      ".config/sops/age"
+      "personal"
+      { "personal/media" = "Movies/media"; }
+      "personal/obsidian"
+      "personal/projects"
+      "personal/projects/learn"
+      "personal/playground"
+      "workspace"
+      "workspace/docs"
+    ];
+    sessionVariables = {
+      XDG_CONFIG_HOME = "$HOME/.config";
+      TERM = "ghostty";
+      SHELL = "zsh";
+    };
+    stateVersion = "26.11";
+    sessionPath = [
+      "/run/current-system/sw/bin"
+      "$HOME/.nix-profile/bin"
+      "$HOME/.cargo/bin"
+      "/opt/homebrew/bin"
+    ];
   };
-  home.sessionPath = [
-    "/run/current-system/sw/bin"
-    "$HOME/.nix-profile/bin"
-    "$HOME/.cargo/bin"
-    "/opt/homebrew/bin"
-  ];
+  xdg.userDirs.enable = false;
   programs.home-manager.enable = true;
 }

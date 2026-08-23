@@ -8,4 +8,5 @@
   superCmd = pkgs.callPackage ./supercmd.nix { };
   sysClean = pkgs.callPackage ./sys-clean.nix { };
   recordly = pkgs.callPackage ./recordly.nix { };
+  tinycast = pkgs.callPackage ./tinycast.nix { };
 }
