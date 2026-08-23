@@ -12,9 +12,9 @@ myLib.mkHomeModule {
   description = "Vicinae launcher and clipboard manager";
   imports = [ inputs.vicinae.homeManagerModules.default ];
   config = {
-    services.vicinae = {
+    programs.vicinae = {
       enable = true;
-      systemd = {
+      systemd = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
         enable = true;
         autoStart = true;
       };
@@ -50,19 +50,20 @@ myLib.mkHomeModule {
         };
       };
       extensions = with inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
-        bluetooth
         nix
+      ] ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
+        bluetooth
         power-profile
         wifi-commander
       ];
     };
-    systemd.user.services.vicinae.Service.Environment = lib.mkIf pkgs.stdenv.isLinux {
+    systemd.user.services.vicinae.Service.Environment = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
       USE_LAYER_SHELL = "1";
       XDG_DATA_DIRS = "${config.home.homeDirectory}/.nix-profile/share:/etc/profiles/per-user/${config.home.username}/share:/run/current-system/sw/share:/usr/share:${config.home.homeDirectory}/.local/share";
       PATH = "${lib.makeBinPath [ pkgs.pulseaudio ]}:${
         inputs.vicinae.packages.${pkgs.stdenv.hostPlatform.system}.default
       }/libexec/vicinae:${config.home.homeDirectory}/.nix-profile/bin:/etc/profiles/per-user/${config.home.username}/bin:/run/current-system/sw/bin:/run/wrappers/bin";
     };
-    home.packages = [ pkgs.pulseaudio ];
+    home.packages = lib.mkIf pkgs.stdenv.hostPlatform.isLinux [ pkgs.pulseaudio ];
   };
 }

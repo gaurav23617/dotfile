@@ -68,10 +68,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     vicinae.url = "github:vicinaehq/vicinae";
-    vicinae-extensions = {
-      url = "github:vicinaehq/extensions";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    vicinae-extensions.url = "github:vicinaehq/extensions";
     betterfox = {
       url = "github:yokoffing/Betterfox";
       flake = false;
