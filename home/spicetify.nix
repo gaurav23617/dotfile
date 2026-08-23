@@ -13,7 +13,7 @@ myLib.mkHomeModule {
   globalConfig = config;
   name = "media.spicetify";
   description = "Spotify client customizer (Linux only)";
-  config = lib.mkIf pkgs.stdenv.isLinux {
+  config = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
     programs.spicetify = {
       enable = true;
       theme = spicePkgs.themes.catppuccin;

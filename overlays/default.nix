@@ -15,22 +15,21 @@
     # Fix direnv hanging on aarch64-darwin during checkPhase
     # https://github.com/NixOS/nixpkgs/issues/507531
     direnv = prev.direnv.overrideAttrs (oldAttrs: {
-      doCheck = if final.stdenv.isDarwin then false else (oldAttrs.doCheck or true);
+      doCheck = if final.stdenv.hostPlatform.isDarwin then false else (oldAttrs.doCheck or true);
     });
 
     # Fix afdko test failures on Darwin (SIGTRAP)
     afdko = prev.afdko.overrideAttrs (oldAttrs: {
-      doCheck = if final.stdenv.isDarwin then false else (oldAttrs.doCheck or true);
+      doCheck = if final.stdenv.hostPlatform.isDarwin then false else (oldAttrs.doCheck or true);
     });
 
-    # Workaround for autoraise build failure on macOS 14+ due to cctools linker crash
-    autoraise = if final.stdenv.isDarwin then final.stable.autoraise else prev.autoraise;
+
 
     pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
       (python-final: python-prev: {
         # Fix afdko test failures on Darwin (SIGTRAP) in pythonPackages
         afdko = python-prev.afdko.overridePythonAttrs (oldAttrs: {
-          doCheck = if final.stdenv.isDarwin then false else (oldAttrs.doCheck or true);
+          doCheck = if final.stdenv.hostPlatform.isDarwin then false else (oldAttrs.doCheck or true);
         });
       })
     ];

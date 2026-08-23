@@ -17,7 +17,7 @@ myLib.mkHomeModule {
         [
           thumbnail
         ]
-        ++ lib.optionals pkgs.stdenv.isLinux [
+        ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
           mpris
         ];
       bindings = rec {

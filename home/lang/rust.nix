@@ -45,7 +45,7 @@ myLib.mkHomeModule {
 
           rustlings
         ]
-        ++ lib.optionals pkgs.stdenv.isDarwin [ pkgs.libiconv ]
+        ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [ pkgs.libiconv ]
         ++ cargo-plugins;
 
       sessionVariables = {
@@ -61,7 +61,7 @@ myLib.mkHomeModule {
       file.".cargo/config.toml".source = (pkgs.formats.toml { }).generate "cargo-config" {
         install.root = cargoHome;
         net.git-fetch-with-cli = true;
-        target = lib.optionalAttrs pkgs.stdenv.isDarwin {
+        target = lib.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
           "aarch64-apple-darwin".linker = "clang";
         };
       };
