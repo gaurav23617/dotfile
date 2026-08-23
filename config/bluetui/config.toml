@@ -5,16 +5,16 @@ layout = "SpaceAround"
 # Possible values: "auto" or a positive integer
 width = "auto"
 
+esc_quit        = true
 toggle_scanning = "s"
-esc_quit = true
 
 [adapter]
-toggle_pairing = "p"
-toggle_power = "o"
 toggle_discovery = "d"
+toggle_pairing   = "p"
+toggle_power     = "o"
 
 [paired_device]
-unpair = "u"
-toggle_trust = "t"
+rename          = "e"
 toggle_favorite = "f"
-rename = "e"
+toggle_trust    = "t"
+unpair          = "u"

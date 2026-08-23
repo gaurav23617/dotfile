@@ -108,7 +108,7 @@
             # "bruno"
             "ghostty"
             # "steam"
-            "raycast"
+            # "raycast"
             "chatgpt"
             "vorssaint"
             # "t3-code"
