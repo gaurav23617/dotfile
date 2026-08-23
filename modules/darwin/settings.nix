@@ -43,7 +43,8 @@ lib.mkModule {
           NSAutomaticSpellingCorrectionEnabled = true;
           NSAutomaticCapitalizationEnabled = true;
           NSAutomaticPeriodSubstitutionEnabled = false;
-          NSAutomaticWindowAnimationsEnabled = true;
+          NSAutomaticWindowAnimationsEnabled = false;
+          NSWindowShouldDragOnGesture = true;
           NSDocumentSaveNewDocumentsToCloud = false;
           "com.apple.trackpad.scaling" = 3.0;
           AppleShowAllExtensions = true;
