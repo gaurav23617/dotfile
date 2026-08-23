@@ -5,7 +5,10 @@
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 
 # Commands to run after AeroSpace startup
-# after-startup-command = []
+after-startup-command = [
+  'exec-and-forget autoraise -delay 2 -focusDelay 2',
+  'exec-and-forget swipeaerospace',
+]
 
 auto-reload-config = true
 

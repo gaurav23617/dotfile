@@ -10,7 +10,10 @@ myLib.mkHomeModule {
   name = "wm.aerospace";
   description = "AeroSpace macos tiling window manager";
   config = {
-    home.packages = with pkgs; [];
+    home.packages = with pkgs; [
+      autoraise
+      swipeaerospace
+    ];
     programs.aerospace = {
       enable = true;
       launchd.enable = true;
