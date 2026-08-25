@@ -42,7 +42,6 @@
     tmux.enable = true;
     herdr.enable = true;
     lazydocker.enable = true;
-    yazi.enable = true;
   };
 
   shell = {

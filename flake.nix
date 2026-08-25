@@ -41,6 +41,10 @@
       url = "github:Arthur-Ficial/homebrew-tap";
       flake = false;
     };
+    homebrew-augani = {
+      url = "github:Augani/homebrew-dory";
+      flake = false;
+    };
     brew-nix = {
       url = "github:BatteredBunny/brew-nix";
       inputs.nix-darwin.follows = "nix-darwin";

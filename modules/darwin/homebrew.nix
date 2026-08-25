@@ -38,6 +38,7 @@
             "mhaeuser/homebrew-mhaeuser" = inputs.homebrew-mhaeuser;
             "netbirdio/homebrew-tap" = inputs.homebrew-netbirdio;
             "Arthur-Ficial/homebrew-tap" = inputs.homebrew-arthur-ficial;
+            "augani/homebrew-dory" = inputs.homebrew-augani;
           };
         };
 
@@ -114,6 +115,7 @@
             # "t3-code"
             "spotify"
             # "wispr-flow"
+            "handy"
             # "orbstack"
             "obsidian"
             # "gcloud-cli"
@@ -128,6 +130,7 @@
             # "brave-browser"
             # "helium-browser"
             "keyboardcleantool"
+            "Augani/dory/dory"
             # "netbirdio/tap/netbird-ui"
             # "mhaeuser/mhaeuser/battery-toolkit"
           ];
@@ -148,6 +151,7 @@
             "docker-buildx"
             # "tesseract-lang"
             "docker-compose"
+            "docker-credential-helper"
             "tree-sitter-cli"
             # "netbirdio/tap/netbird"
             # "Arthur-Ficial/tap/apfel"
