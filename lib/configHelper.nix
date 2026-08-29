@@ -78,7 +78,7 @@ rec {
       ++ lib.optionals withHomeManager [
         home-manager.nixosModules.home-manager
         {
-          home-manager.useGlobalPkgs = false;
+          home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.${username} = {
             imports = [ ../hosts/${hostname}/home.nix ];
