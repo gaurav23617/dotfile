@@ -45,6 +45,10 @@
       url = "github:Augani/homebrew-dory";
       flake = false;
     };
+    homebrew-tinycast = {
+      url = "github:abue-ammar/homebrew-tinycast";
+      flake = false;
+    };
     brew-nix = {
       url = "github:BatteredBunny/brew-nix";
       inputs.nix-darwin.follows = "nix-darwin";

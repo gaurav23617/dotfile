@@ -39,6 +39,7 @@
             "netbirdio/homebrew-tap" = inputs.homebrew-netbirdio;
             "Arthur-Ficial/homebrew-tap" = inputs.homebrew-arthur-ficial;
             "augani/homebrew-dory" = inputs.homebrew-augani;
+            "abue-ammar/homebrew-tinycast" = inputs.homebrew-tinycast;
           };
         };
 
@@ -91,6 +92,11 @@
           else
             echo "ℹ️  Xcode.app not found yet. It will be configured on the next switch after Homebrew finishes downloading it."
           fi
+
+          # Trust non-official taps for casks
+          if [ -x /opt/homebrew/bin/brew ]; then
+            sudo -u gaurav /opt/homebrew/bin/brew trust --tap abue-ammar/tinycast 2>/dev/null || true
+          fi
         '';
 
         homebrew = {
@@ -119,7 +125,7 @@
             # "orbstack"
             "obsidian"
             # "gcloud-cli"
-            # "antigravity"
+            "antigravity"
             # "antigravity-ide"
             "antigravity-cli"
             "codex"
@@ -131,6 +137,7 @@
             # "helium-browser"
             "keyboardcleantool"
             "Augani/dory/dory"
+            "abue-ammar/tinycast/tinycast"
             # "netbirdio/tap/netbird-ui"
             # "mhaeuser/mhaeuser/battery-toolkit"
           ];
@@ -144,6 +151,7 @@
             # "colima"
             "docker"
             "libiconv"
+            "container"
             "tesseract"
             "tesseract-lang"
             # "gemini-cli"

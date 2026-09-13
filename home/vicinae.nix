@@ -49,13 +49,19 @@ myLib.mkHomeModule {
           opacity = 0.98;
         };
       };
-      extensions = with inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
-        nix
-      ] ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
-        bluetooth
-        power-profile
-        wifi-commander
-      ];
+      extensions =
+        let
+          exts = inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system};
+        in
+        [ exts.nix ]
+        ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux (
+          map (name: exts.${name}) (
+            lib.filter (name: exts ? ${name}) [
+              "power-profile"
+              "wifi-commander"
+            ]
+          )
+        );
     };
     systemd.user.services.vicinae.Service.Environment = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
       USE_LAYER_SHELL = "1";

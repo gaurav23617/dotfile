@@ -50,12 +50,20 @@ export GOPATH="$XDG_CONFIG_HOME/go"
 export PATH="$HOME/.local/bin":$PATH
 export PATH=$PATH:/usr/bin
 export PATH="$HOME/.npm/bin:$PATH"
+export NPM_CONFIG_PREFIX="$HOME/.npm"
 export PATH="$HOME/.docker/bin":$PATH
 export PATH="$HOME/.local/nvim-macos-arm64/bin":$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.local/share/go/bin:$PATH
 export PATH=$HOME/.cache/.bun/bin:$PATH
 export PATH="$HOME/.local/share/neovim/bin":$PATH
+
+# dory cli
+DORY_CLI_BIN="$HOME/.dory/bin"
+case ":$PATH:" in
+  *":$DORY_CLI_BIN:"*) ;;
+  *) export PATH="$DORY_CLI_BIN:$PATH" ;;
+esac
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"

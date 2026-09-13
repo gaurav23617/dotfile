@@ -42,7 +42,7 @@ myLib.mkHomeModule {
         nixd
         selene
         uv
-        typescript-go
+        typescript
         gopls
         gofumpt
         stylua

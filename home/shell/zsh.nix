@@ -26,7 +26,28 @@ myLib.mkHomeModule {
 
     programs.zsh = {
       enable = true;
-      initContent = ''source "$HOME/.config/zsh/.zshrc"'';
+      initContent = ''
+        # >>> dory cli >>>
+        # dory:remove-empty-profile
+        DORY_CLI_BIN="$HOME/.dory/bin"
+        case ":$PATH:" in
+          *":$DORY_CLI_BIN:"*) ;;
+          *) export PATH="$DORY_CLI_BIN:$PATH" ;;
+        esac
+        # <<< dory cli <<<
+        
+        source "$HOME/.config/zsh/.zshrc"
+      '';
+      profileExtra = ''
+        # >>> dory cli >>>
+        # dory:remove-empty-profile
+        DORY_CLI_BIN="$HOME/.dory/bin"
+        case ":$PATH:" in
+          *":$DORY_CLI_BIN:"*) ;;
+          *) export PATH="$DORY_CLI_BIN:$PATH" ;;
+        esac
+        # <<< dory cli <<<
+      '';
     };
 
     home.file.".config/zsh".source =

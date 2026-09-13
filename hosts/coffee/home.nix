@@ -8,15 +8,14 @@
 {
 
   home.packages = with pkgs; [
-    multica
-    multica-cli
+    # multica
+    # multica-cli
     # spotiflac
     # spotidownloader
     # nyaa
     # motrix-next
     moviebox-tui
-    recordly
-    tinycast
+    # recordly
   ];
 
   imports = [
@@ -33,7 +32,7 @@
   };
 
   editors = {
-    zed.enable = false;
+    zed.enable = true;
     neovim.enable = true;
   };
 
@@ -59,7 +58,7 @@
 
   versionControl = {
     git.enable = true;
-    # jujutsu.enable = false;
+    jujutsu.enable = false;
   };
   secrets.sops.enable = true;
 
@@ -94,6 +93,7 @@
       "/opt/homebrew/bin"
     ];
   };
+
   xdg.userDirs.enable = false;
   programs.home-manager.enable = true;
 }

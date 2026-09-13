@@ -30,7 +30,16 @@
         path = "${sshDir}/allowed_signers";
       };
       nix_access_tokens = { };
+      npm_auth_token = { };
     };
+
+  sops.templates.".npmrc" = {
+    path = "${config.home.homeDirectory}/.npmrc";
+    content = ''
+      prefix=${config.home.homeDirectory}/.npm
+      //registry.npmjs.org/:_authToken=${config.sops.placeholder.npm_auth_token}
+    '';
+  };
 
   sops.templates."vicinae-secrets.json" = {
     path = "${config.home.homeDirectory}/.config/vicinae/secrets.json";

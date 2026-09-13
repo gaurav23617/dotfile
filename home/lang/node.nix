@@ -23,13 +23,14 @@ myLib.mkHomeModule {
         # oxfmt
         # oxlint
         # tsgolint
-        typescript-go
+        typescript
       ];
 
       sessionVariables = {
         # Suppress experimental and diagnostic warnings (common in Node 24+ with pnpm)
         NODE_OPTIONS = "--disable-warning=ExperimentalWarning --no-warnings";
         PNPM_HOME = pnpmHome;
+        NPM_CONFIG_PREFIX = npmGlobalDir;
       };
 
       sessionPath = [
@@ -44,9 +45,6 @@ myLib.mkHomeModule {
       '';
 
       file = {
-        ".npmrc".text = ''
-          prefix=${npmGlobalDir}
-        '';
 
         ".config/pnpm/config.yaml".text = ''
           prefix: ${pnpmHome}

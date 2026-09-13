@@ -129,3 +129,11 @@ function git_prompt_info() {
     echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_SUFFIX"
   fi
 }
+
+function portkill() {
+  if [ -z "$1" ]; then
+    echo "Usage: portkill <port_number>"
+    return 1
+  fi
+  kill -9 $(lsof -t -i:$1)
+}

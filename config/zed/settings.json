@@ -9,10 +9,13 @@
 {
   "diff_view_style": "unified",
   "agent_servers": {
-    "opencode": {
+    "antigravity-acp": {
+      "default_config_options": {
+        "model": "gemini-3.8-flash-high"
+      },
       "type": "registry"
     },
-    "gemini": {
+    "opencode": {
       "type": "registry"
     }
   },
@@ -40,7 +43,7 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Catppuccin Frappé",
+    "dark": "One Dark",
   },
   "auto_install_extensions": {
     "biome": true,
@@ -61,6 +64,7 @@
     "terraform": true,
     "toml": true,
     "zig": true,
+    "markdown-oxide": true,
   },
   "languages": {
     "Nix": {

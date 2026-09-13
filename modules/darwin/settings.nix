@@ -9,6 +9,10 @@ lib.mkModule {
   name = "darwin.settings";
   description = "macOS system defaults and UI settings";
   config = {
+    programs.zsh = {
+      enable = true;
+      promptInit = "";
+    };
     security.pam.services.sudo_local = {
       touchIdAuth = true;
       reattach = true;

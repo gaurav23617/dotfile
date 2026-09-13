@@ -35,5 +35,14 @@
       indiefluence-vps-pub = {
         path = "${sshDir}/indiefluence_vps.pub";
       };
+      npm_auth_token = { };
     };
+
+  sops.templates.".npmrc" = {
+    path = "${config.home.homeDirectory}/.npmrc";
+    content = ''
+      prefix=${config.home.homeDirectory}/.npm
+      //registry.npmjs.org/:_authToken=${config.sops.placeholder.npm_auth_token}
+    '';
+  };
 }
